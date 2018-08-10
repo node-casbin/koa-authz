@@ -1,0 +1,25 @@
+{
+  "name": "koa-authz",
+  "version": "1.0.0",
+  "description": "koa-authz is an authorization middleware for Koa",
+  "main": "authz.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/node-casbin/koa-authz.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/node-casbin/koa-authz/issues"
+  },
+  "homepage": "https://github.com/node-casbin/koa-authz#readme",
+  "dependencies": {
+    "casbin": "^1.0.5"
+  },
+  "devDependencies": {
+    "koa": "^2.5.2"
+  }
+}
