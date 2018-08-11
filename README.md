@@ -19,7 +19,7 @@ npm install koa-authz
 ```js
 const { Enforcer } = requrie('casbin')
 const Koa = require('koa')
-const app = new Koa();
+const app = new Koa()
 const authz = require('koa-authz')
 
 // response
@@ -29,10 +29,12 @@ app.use((ctx, next) => {
   console.log(new Date() - start)
 })
 
-// load the casbin model and policy from files, database is also supported.
-const enforcer = new Enforcer("authz_model.conf", "authz_policy.csv")
 // use authz middleware
-app.use(authz(enforcer))
+app.use(authz(async() => {
+  // load the casbin model and policy from files, database is also supported.
+  const enforcer = await Enforcer.newEnforcer("authz_model.conf", "authz_policy.csv")
+  return enforcer
+}))
 
 // reload routes
 const router = require('koa-router')({prefix: '/user'})
