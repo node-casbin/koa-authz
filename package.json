@@ -4,7 +4,8 @@
   "description": "koa-authz is an authorization middleware for Koa",
   "main": "authz.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nyc npm run test-only",
+    "test-only": "mocha --reporter spec test/test.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
     "casbin": "^1.0.5"
   },
   "devDependencies": {
-    "koa": "^2.5.2"
+    "koa": "^2.5.2",
+    "supertest": "^3.1.0"
   }
 }
