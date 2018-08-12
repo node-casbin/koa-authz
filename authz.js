@@ -12,7 +12,6 @@ module.exports = function authz (newEnforcer) {
 			if (!(enforcer instanceof Enforcer)) {
 				throw new Error('Invalid enforcer')
 			}
-			await enforcer.initialize()
       const authzorizer = new BasicAuthorizer(ctx, enforcer)
       if (!authzorizer.checkPermission()) {
 				ctx.status = 403
@@ -46,6 +45,6 @@ class BasicAuthorizer {
 		const {ctx, enforcer} = this
 		const {originalUrl: path, method} = ctx
 		const user = this.getUserName()
-		return enforcer.Enforce(user, path, method)
+		return enforcer.enforce(user, path, method)
 	}
 }

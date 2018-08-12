@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/node-casbin/koa-authz#readme",
   "dependencies": {
-    "casbin": "^1.0.5"
+    "casbin": "^1.0.7"
   },
   "devDependencies": {
     "koa": "^2.5.2",
