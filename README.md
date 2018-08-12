@@ -17,7 +17,7 @@ npm install koa-authz
 ## Simple Example
 
 ```js
-const { Enforcer } = requrie('casbin')
+const { Enforcer } = require('casbin')
 const Koa = require('koa')
 const app = new Koa()
 const authz = require('koa-authz')
