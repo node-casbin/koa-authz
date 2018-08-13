@@ -7,12 +7,33 @@
     "test": "./node_modules/.bin/nyc npm run test-only",
     "test-only": "./node_modules/.bin/mocha --reporter spec test/test.js"
   },
+  "keywords": [
+    "node-casbin",
+    "koajs",
+    "koa2",
+    "authz",
+    "authorization",
+    "middleware"
+  ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/node-casbin/koa-authz.git"
+    "url": "https://github.com/node-casbin/koa-authz.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": {
+    "name": "Chalin-Shi",
+    "email": "18875906195@163.com"
+  },
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "report-dir": "./coverage"
+  },
+  "engines": {
+    "node": ">= 7.6.0"
+  },
+  "license": "http://www.apache.org/licenses/LICENSE-2.0",
   "bugs": {
     "url": "https://github.com/node-casbin/koa-authz/issues"
   },
@@ -21,6 +42,7 @@
     "casbin": "^1.0.7"
   },
   "devDependencies": {
+    "coveralls": "^3.0.2",
     "koa": "^2.5.2",
     "mocha": "^5.2.0",
     "nyc": "^12.0.2",

@@ -12,4 +12,4 @@ jobs:
   include:
   - stage: Produce Coverage
     node_js: node
-    script: npm test
+    script: npm test && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage && rm -rf .nyc_output
