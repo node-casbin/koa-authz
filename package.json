@@ -4,8 +4,8 @@
   "description": "koa-authz is an authorization middleware for Koa",
   "main": "authz.js",
   "scripts": {
-    "test": "./node_modules/.bin/nyc npm run test-only",
-    "test-only": "./node_modules/.bin/mocha --reporter spec test/test.js"
+    "test": "nyc npm run test-only",
+    "test-only": "mocha --reporter spec test/test.js"
   },
   "keywords": [
     "node-casbin",
@@ -42,7 +42,6 @@
     "casbin": "^1.0.7"
   },
   "devDependencies": {
-    "coveralls": "^3.0.2",
     "koa": "^2.5.2",
     "mocha": "^5.2.0",
     "nyc": "^12.0.2",
