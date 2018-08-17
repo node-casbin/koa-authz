@@ -5,9 +5,10 @@
 const { Enforcer } = require('casbin')
 
 // authz returns the authorizer, uses a Casbin enforcer as input
-module.exports = function authz (newEnforcer) {
+module.exports = function authz (options) {
   return async (ctx, next) => {
     try {
+			const {newEnforcer} = options
 			const enforcer = await newEnforcer()
 			if (!(enforcer instanceof Enforcer)) {
 				throw new Error('Invalid enforcer')
