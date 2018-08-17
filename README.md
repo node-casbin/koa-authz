@@ -30,10 +30,12 @@ app.use((ctx, next) => {
 })
 
 // use authz middleware
-app.use(authz(async() => {
-  // load the casbin model and policy from files, database is also supported.
-  const enforcer = await Enforcer.newEnforcer("authz_model.conf", "authz_policy.csv")
-  return enforcer
+app.use(authz({
+  newEnforcer: async() => {
+    // load the casbin model and policy from files, database is also supported.
+    const enforcer = await Enforcer.newEnforcer("authz_model.conf", "authz_policy.csv")
+    return enforcer
+  }
 }))
 
 // reload routes
