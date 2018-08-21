@@ -17,8 +17,7 @@ Koa-Authz is an authorization middleware for [Koa](https://github.com/koajs/koa)
 ## Installation
 
 ```shell
-# nodejs version >= 7.6.0
-npm install koa-authz
+npm install --save koa-authz
 ```
 
 ## Simple Example
@@ -58,7 +57,7 @@ app.use(router.routes(), router.allowedMethods())
 app.listen(3000)
 ```
 
-## Documentation
+## How to control the access
 
 The authorization determines a request based on ``{subject, object, action}``, which means what ``subject`` can perform what ``action`` on what ``object``. In this plugin, the meanings are:
 
@@ -67,12 +66,12 @@ The authorization determines a request based on ``{subject, object, action}``, w
 3. ``action``: HTTP method like GET, POST, PUT, DELETE, or the high-level actions you defined like "read-file", "write-blog"
 
 
-For how to write authorization policy and other details, please refer to [the Casbin's documentation](https://github.com/casbin/casbin).
+For how to write authorization policy and other details, please refer to [the Casbin's documentation](https://casbin.org).
 
 ## Getting Help
 
-- [Casbin](https://github.com/casbin/casbin)
+- [Node-Casbin](https://github.com/casbin/node-casbin)
 
 ## License
 
-This project is under MIT License. See the [LICENSE](LICENSE) file for the full license text.
+This project is licensed under the [Apache 2.0 license](LICENSE).
