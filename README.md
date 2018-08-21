@@ -2,15 +2,15 @@ Koa-Authz
 ====
 [![NPM version][npm-image]][npm-url]
 [![NPM download][download-image]][download-url]
-[![codebeat badge](https://codebeat.co/badges/c17c9ee1-da42-4db3-8047-9574ad2b23b1)](https://codebeat.co/projects/github-com-node-casbin-koa-authz-master)
+[![codebeat badge](https://codebeat.co/badges/9defa882-898c-4dcb-91a6-7e8f061ccaac)](https://codebeat.co/projects/github-com-node-casbin-koa-authz-master)
 [![Build Status](https://travis-ci.org/node-casbin/koa-authz.svg?branch=master)](https://travis-ci.org/node-casbin/koa-authz)
 [![Coverage Status](https://coveralls.io/repos/github/node-casbin/koa-authz/badge.svg?branch=master)](https://coveralls.io/github/node-casbin/koa-authz?branch=master)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/casbin/lobby)
 
-[npm-image]: https://img.shields.io/npm/v/casbin-koa-authz.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/casbin-koa-authz
-[download-image]: https://img.shields.io/npm/dm/casbin-koa-authz.svg?style=flat-square
-[download-url]: https://npmjs.org/package/casbin-koa-authz
+[npm-image]: https://img.shields.io/npm/v/koa-authz.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/koa-authz
+[download-image]: https://img.shields.io/npm/dm/koa-authz.svg?style=flat-square
+[download-url]: https://npmjs.org/package/koa-authz
 
 Koa-Authz is an authorization middleware for [Koa](https://github.com/koajs/koa), it's based on ``Node-Casbin``: [https://github.com/casbin/node-casbin](https://github.com/casbin/node-casbin).
 
@@ -18,7 +18,7 @@ Koa-Authz is an authorization middleware for [Koa](https://github.com/koajs/koa)
 
 ```shell
 # nodejs version >= 7.6.0
-npm install casbin-koa-authz
+npm install koa-authz
 ```
 
 ## Simple Example
@@ -27,7 +27,7 @@ npm install casbin-koa-authz
 const { Enforcer } = require('casbin')
 const Koa = require('koa')
 const app = new Koa()
-const authz = require('casbin-koa-authz')
+const authz = require('koa-authz')
 
 // response
 app.use((ctx, next) => {
