@@ -1,17 +1,24 @@
-# Koa-Authz 
+Koa-Authz 
+====
+[![NPM version][npm-image]][npm-url]
+[![NPM download][download-image]][download-url]
+[![codebeat badge](https://codebeat.co/badges/c17c9ee1-da42-4db3-8047-9574ad2b23b1)](https://codebeat.co/projects/github-com-node-casbin-koa-authz-master)
+[![Build Status](https://travis-ci.org/node-casbin/koa-authz.svg?branch=master)](https://travis-ci.org/node-casbin/koa-authz)
+[![Coverage Status](https://coveralls.io/repos/github/node-casbin/koa-authz/badge.svg?branch=master)](https://coveralls.io/github/node-casbin/koa-authz?branch=master)
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/casbin/lobby)
 
-[![Build Status](https://travis-ci.org/gin-contrib/authz.svg)](https://travis-ci.org/gin-contrib/authz)
-[![codecov](https://codecov.io/gh/gin-contrib/authz/branch/master/graph/badge.svg)](https://codecov.io/gh/gin-contrib/authz)
-[![Go Report Card](https://goreportcard.com/badge/github.com/gin-contrib/authz)](https://goreportcard.com/report/github.com/gin-contrib/authz)
-[![GoDoc](https://godoc.org/github.com/gin-contrib/authz?status.svg)](https://godoc.org/github.com/gin-contrib/authz)
-[![Join the chat at https://gitter.im/gin-gonic/gin](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/gin-gonic/gin)
+[npm-image]: https://img.shields.io/npm/v/casbin-koa-authz.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/casbin-koa-authz
+[download-image]: https://img.shields.io/npm/dm/casbin-koa-authz.svg?style=flat-square
+[download-url]: https://npmjs.org/package/casbin-koa-authz
 
-Koa-Authz is an authorization middleware for [Koa](https://github.com/koajs/koa), it's based on [https://github.com/casbin/node-casbin](https://github.com/casbin/node-casbin).
+Koa-Authz is an authorization middleware for [Koa](https://github.com/koajs/koa), it's based on ``Node-Casbin``: [https://github.com/casbin/node-casbin](https://github.com/casbin/node-casbin).
 
 ## Installation
 
-```
-npm install koa-authz
+```shell
+# nodejs version >= 7.6.0
+npm install casbin-koa-authz
 ```
 
 ## Simple Example
@@ -20,7 +27,7 @@ npm install koa-authz
 const { Enforcer } = require('casbin')
 const Koa = require('koa')
 const app = new Koa()
-const authz = require('koa-authz')
+const authz = require('casbin-koa-authz')
 
 // response
 app.use((ctx, next) => {
@@ -33,7 +40,7 @@ app.use((ctx, next) => {
 app.use(authz({
   newEnforcer: async() => {
     // load the casbin model and policy from files, database is also supported.
-    const enforcer = await Enforcer.newEnforcer("authz_model.conf", "authz_policy.csv")
+    const enforcer = await Enforcer.newEnforcer('authz_model.conf', 'authz_policy.csv')
     return enforcer
   }
 }))
