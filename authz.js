@@ -8,15 +8,15 @@ const BasicAuthorizer = require('./BasicAuthorizer')
 module.exports = function authz (options) {
   return async (ctx, next) => {
     try {
-      const {newEnforcer, basicAuthorizer} = options
+      const {newEnforcer, authorizer} = options
       const enforcer = await newEnforcer()
       if (!(enforcer instanceof Enforcer)) {
         throw new Error('Invalid enforcer')
       }
-      if (!(basicAuthorizer instanceof BasicAuthorizer)) {
+      const authzorizer = authorizer ? authorizer(ctx, enforcer) : new BasicAuthorizer(ctx, enforcer)
+      if (!(authzorizer instanceof BasicAuthorizer)) {
         throw new Error('Plase extends BasicAuthorizer class')
       }
-      const authzorizer = basicAuthorizer || new BasicAuthorizer(ctx, enforcer)
       if (!authzorizer.checkPermission()) {
         ctx.status = 403
       }
