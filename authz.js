@@ -15,7 +15,7 @@ module.exports = function authz (options) {
       }
       const authzorizer = authorizer ? authorizer(ctx, enforcer) : new BasicAuthorizer(ctx, enforcer)
       if (!(authzorizer instanceof BasicAuthorizer)) {
-        throw new Error('Plase extends BasicAuthorizer class')
+        throw new Error('Please extends BasicAuthorizer class')
       }
       if (!authzorizer.checkPermission()) {
         ctx.status = 403
