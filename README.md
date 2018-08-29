@@ -57,23 +57,27 @@ app.use(router.routes(), router.allowedMethods())
 app.listen(3000)
 ```
 
-## Customize authorizer
-default koa-authz provide BasicAuthorizer, if you want customize just extends BasicAuthorizer
-```
-class CustomizeAuthorizer extends BasicAuthorizer {
+## Use a customized authorizer
+
+This package provides ``BasicAuthorizer``, it uses ``HTTP Basic Authentication`` as the authentication method.
+If you want to use another authentication method like OAuth, you needs to extends ``BasicAuthorizer`` as below:
+
+```js
+class MyAuthorizer extends BasicAuthorizer {
   // override function
   getUserName () {
     const { username } = this.ctx.state.user
     return username
   }
 }
+
 app.use(authz({
   newEnforcer: async () => {
     // load the casbin model and policy from files, database is also supported.
     const enforcer = await Enforcer.newEnforcer('examples/authz_model.conf', 'examples/authz_policy.csv')
     return enforcer
   },
-  authorizer: (ctx, option) => new CustomizeAuthorizer(ctx, option)
+  authorizer: (ctx, option) => new MyAuthorizer(ctx, option)
 }))
 ```
 
