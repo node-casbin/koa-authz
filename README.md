@@ -57,6 +57,26 @@ app.use(router.routes(), router.allowedMethods())
 app.listen(3000)
 ```
 
+## Customize authorizer
+default koa-authz provide BasicAuthorizer, if you want customize just extends BasicAuthorizer
+```
+class CustomizeAuthorizer extends BasicAuthorizer {
+  // override function
+  getUserName () {
+    const { username } = this.ctx.state.user
+    return username
+  }
+}
+app.use(authz({
+  newEnforcer: async () => {
+    // load the casbin model and policy from files, database is also supported.
+    const enforcer = await Enforcer.newEnforcer('examples/authz_model.conf', 'examples/authz_policy.csv')
+    return enforcer
+  },
+  authorizer: (ctx, option) => new CustomizeAuthorizer(ctx, option)
+}))
+```
+
 ## How to control the access
 
 The authorization determines a request based on ``{subject, object, action}``, which means what ``subject`` can perform what ``action`` on what ``object``. In this plugin, the meanings are:
