@@ -42,4 +42,4 @@ app.use(authz({
   authorizer: (ctx, option) => new CustomizeAuthorizer(ctx, option)
 }))
 
-module.exports = app.listen(3000)
+module.exports = app.listen(3001)
