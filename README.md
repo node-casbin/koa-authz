@@ -29,7 +29,7 @@ const app = new Koa()
 const authz = require('koa-authz')
 
 // response
-app.use((ctx, next) => {
+app.use(async (ctx, next) => {
   const start = new Date()
   await next()
   console.log(new Date() - start)
