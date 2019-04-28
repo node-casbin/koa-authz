@@ -17,13 +17,13 @@ Koa-Authz is an authorization middleware for [Koa](https://github.com/koajs/koa)
 ## Installation
 
 ```shell
-npm install --save koa-authz
+npm install casbin koa-authz --save
 ```
 
 ## Simple Example
 
 ```js
-const { Enforcer } = require('casbin')
+const casbin = require('casbin')
 const Koa = require('koa')
 const app = new Koa()
 const authz = require('koa-authz')
@@ -39,7 +39,7 @@ app.use(async (ctx, next) => {
 app.use(authz({
   newEnforcer: async() => {
     // load the casbin model and policy from files, database is also supported.
-    const enforcer = await Enforcer.newEnforcer('authz_model.conf', 'authz_policy.csv')
+    const enforcer = await casbin.newEnforcer('authz_model.conf', 'authz_policy.csv')
     return enforcer
   }
 }))
@@ -74,7 +74,7 @@ class MyAuthorizer extends BasicAuthorizer {
 app.use(authz({
   newEnforcer: async () => {
     // load the casbin model and policy from files, database is also supported.
-    const enforcer = await Enforcer.newEnforcer('examples/authz_model.conf', 'examples/authz_policy.csv')
+    const enforcer = await casbin.newEnforcer('examples/authz_model.conf', 'examples/authz_policy.csv')
     return enforcer
   },
   authorizer: (ctx, option) => new MyAuthorizer(ctx, option)

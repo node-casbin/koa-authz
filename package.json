@@ -33,10 +33,9 @@
     "url": "https://github.com/node-casbin/koa-authz/issues"
   },
   "homepage": "https://github.com/node-casbin/koa-authz#readme",
-  "dependencies": {
-    "casbin": "^1.0.7"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "casbin": "^2.0.3",
     "eslint": "^5.4.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.14.0",
@@ -47,5 +46,8 @@
     "jest": "^23.5.0",
     "koa": "^2.5.2",
     "supertest": "^3.1.0"
+  },
+  "peerDependencies": {
+    "casbin": "^2.0.3"
   }
 }

@@ -13,7 +13,7 @@
 // limitations under the License.
 
 const Koa = require('koa')
-const { Enforcer } = require('casbin')
+const casbin = require('casbin')
 const authz = require('../authz')
 const app = new Koa()
 const BasicAuthorizer = require('../BasicAuthorizer')
@@ -48,7 +48,7 @@ class CustomizeAuthorizer extends BasicAuthorizer {
 app.use(authz({
   newEnforcer: async () => {
     // load the casbin model and policy from files, database is also supported.
-    const enforcer = await Enforcer.newEnforcer('examples/authz_model.conf', 'examples/authz_policy.csv')
+    const enforcer = await casbin.newEnforcer('examples/authz_model.conf', 'examples/authz_policy.csv')
     return enforcer
   },
   authorizer: (ctx, option) => new CustomizeAuthorizer(ctx, option)
