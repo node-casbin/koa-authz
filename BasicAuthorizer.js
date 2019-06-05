@@ -30,11 +30,11 @@ class BasicAuthorizer {
 
   // checkPermission checks the user/method/path combination from the request.
   // Returns true (permission granted) or false (permission forbidden)
-  checkPermission () {
+  async checkPermission () {
     const {ctx, enforcer} = this
     const {originalUrl: path, method} = ctx
     const user = this.getUserName()
-    return enforcer.enforce(user, path, method)
+    return await enforcer.enforce(user, path, method)
   }
 }
 

@@ -15,9 +15,14 @@ Koa-Authz
 Koa-Authz is an authorization middleware for [Koa](https://github.com/koajs/koa), it's based on ``Node-Casbin``: [https://github.com/casbin/node-casbin](https://github.com/casbin/node-casbin).
 
 ## Installation
-
+### use casbin v2.x
 ```shell
-npm install casbin koa-authz --save
+npm install casbin@2 koa-authz@2 --save
+```
+
+### use casbin v3.x
+```shell
+npm install casbin@3 koa-authz@3 --save
 ```
 
 ## Simple Example

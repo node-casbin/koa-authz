@@ -28,7 +28,7 @@ module.exports = function authz (options) {
       if (!(authzorizer instanceof BasicAuthorizer)) {
         throw new Error('Please extends BasicAuthorizer class')
       }
-      if (!authzorizer.checkPermission()) {
+      if (!await authzorizer.checkPermission()) {
         ctx.status = 403
       }
       await next()
