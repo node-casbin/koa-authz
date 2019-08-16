@@ -30,6 +30,7 @@ module.exports = function authz (options) {
       }
       if (!await authzorizer.checkPermission()) {
         ctx.status = 403
+        return
       }
       await next()
     } catch (e) {
