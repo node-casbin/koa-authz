@@ -1,6 +1,6 @@
 {
   "name": "koa-authz",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "koa-authz is an authorization middleware for Koa",
   "main": "authz.js",
   "scripts": {
