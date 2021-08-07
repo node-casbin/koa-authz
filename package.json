@@ -46,7 +46,7 @@
     "express": "^4.16.3",
     "jest": "^27.0.6",
     "koa": "^2.5.2",
-    "supertest": "^3.1.0"
+    "supertest": "^6.1.4"
   },
   "peerDependencies": {
     "casbin": "^5.11.1"
