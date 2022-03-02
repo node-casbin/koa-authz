@@ -1192,9 +1192,9 @@ caniuse-lite@^1.0.30001286:
   integrity sha512-WfrtPEoNSoeATDlf4y3QvkwiELl9GyPLISV5GejTbbQRtQx4LhsXmc9IQ6XCL2d7UxCyEzToEZNMeqR79OUw8Q==
 
 casbin@^5.11.1:
-  version "5.13.1"
-  resolved "https://registry.yarnpkg.com/casbin/-/casbin-5.13.1.tgz#92da850751480c1ed0a26fd2a87bc52549b457a0"
-  integrity sha512-kHfpWrIVGZipIZVJXpTXtWvDhNdH65R8RaZj/QWylH/kD/hDwb6xA3Dlqpd0yB1nAhltxqlTh05uFbzvqJ9vfw==
+  version "5.13.2"
+  resolved "https://registry.yarnpkg.com/casbin/-/casbin-5.13.2.tgz#11418ca035122c4f1e35db46d77ebaa930bc4e80"
+  integrity sha512-BH2Q/aU4DCYdkYoIPSlZTR41mvjItMtr7C0EsmB5ufIi6JeFzC+Sn+J+cxfQjdQTj0jW8ycka/eQNe4JaYs6IA==
   dependencies:
     await-lock "^2.0.1"
     csv-parse "^4.15.3"
