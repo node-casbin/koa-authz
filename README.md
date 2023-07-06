@@ -5,7 +5,7 @@ Koa-Authz
 [![codebeat badge](https://codebeat.co/badges/9defa882-898c-4dcb-91a6-7e8f061ccaac)](https://codebeat.co/projects/github-com-node-casbin-koa-authz-master)
 [![Build Status](https://travis-ci.org/node-casbin/koa-authz.svg?branch=master)](https://travis-ci.org/node-casbin/koa-authz)
 [![Coverage Status](https://coveralls.io/repos/github/node-casbin/koa-authz/badge.svg?branch=master)](https://coveralls.io/github/node-casbin/koa-authz?branch=master)
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/casbin/lobby)
+[![Discord](https://img.shields.io/discord/1022748306096537660?logo=discord&label=discord&color=5865F2)](https://discord.gg/S5UjpzGZjN)
 
 [npm-image]: https://img.shields.io/npm/v/koa-authz.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/koa-authz
